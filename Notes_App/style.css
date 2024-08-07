@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg , #cf9aff, #95c0ff);
+    color: white;
+    padding-top: 4%;
+    padding-left: 10%;
+}
+.container button{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#9418fd , #571094);
+    color: white;
+    padding : 15px 25px;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+.input-box{
+    max-width: 500px;
+    min-height: 150px;
+    width: 100%;
+    position: relative;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    outline: none;
+    padding: 20px;
+    margin: 20px 0;
+   
+}
+.delete{
+    /* border: 2px solid red; */
+    height: 20px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+.bold{
+    height: 20px;
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+    right: 55px; 
+} 

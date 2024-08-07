@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="glass p-8 max-w-md mx-auto text-center">
+        <form id="weather-form" class="mb-4 flex justify-center items-center">
+            <input id="city-input" type="text" placeholder="Enter city" class="p-2 w-3/4 border rounded-l focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <button type="submit" class="bg-white p-2 rounded-r border-l hover:bg-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 4a6 6 0 000 12 6 6 0 000-12z" />
+                </svg>
+            </button>
+        </form>
+        <div id="weather-result" class="text-lg">
+            <div class="flex justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m8-10h2m-16 0H2m2.93-6.93l1.414 1.414M16.657 16.657l1.414 1.414M16.657 7.343l1.414-1.414M7.343 16.657l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+            </div>
+            <div id="temp" class="text-5xl font-semibold mb-2">22°C</div>
+            <div id="place" class="text-2xl mb-4">Bengaluru</div>
+            <div class="flex justify-around">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-1 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 01-8 0m12 4a4 4 0 11-8 0m12 4a4 4 0 11-8 0" />
+                    </svg>
+                    <div>53% Humidity</div>
+                </div>
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-1 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4a2 2 0 011.74 1.03l3.26 6.52A2 2 0 0121 20H3a2 2 0 01-1.74-2.97l3.26-6.52A2 2 0 016 10h4" />
+                    </svg>
+                    <div>5.66 km/h Wind Speed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./Script.js"></script>
+</html>

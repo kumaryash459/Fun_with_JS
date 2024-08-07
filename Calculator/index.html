@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1707761918029-1295034aa31e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            backdrop-filter: blur(1px) saturate(150%);
+            -webkit-backdrop-filter: blur(13px) saturate(160%);
+            background-color: rgba(255, 255, 255, 0.53);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 209, 219, 0.3);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(175, 107, 107, 0.1);
+        }
+
+        .calculator {
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .calculator input[type="text"] {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: right;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .calculator input[type="button"] {
+            width: 70px;
+            height: 70px;
+            margin: 5px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calculator input[type="button"]:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .operator {
+            background-color: rgba(255, 159, 67, 0.7);
+        }
+
+        .operator:hover {
+            background-color: rgba(230, 138, 49, 0.9);
+        }
+
+        .equals {
+            background-color: rgba(0, 200, 81, 0.7);
+        }
+
+        .equals:hover {
+            background-color: rgba(0, 158, 66, 0.9);
+        }
+
+        .clear {
+            background-color: rgba(255, 68, 68, 0.7);
+        }
+
+        .clear:hover {
+            background-color: rgba(204, 0, 0, 0.9);
+        }
+
+        .delete {
+            background-color: rgba(51, 181, 229, 0.7);
+        }
+
+        .delete:hover {
+            background-color: rgba(0, 153, 204, 0.9);
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-row:last-child input {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="button-row">
+                <input type="button" value="1" onclick="display.value += '1'">
+                <input type="button" value="2" onclick="display.value += '2'">
+                <input type="button" value="3" onclick="display.value += '3'">
+                <input type="button" value="4" onclick="display.value += '4'">
+            </div>
+            <div class="button-row">
+                <input type="button" value="5" onclick="display.value += '5'">
+                <input type="button" value="6" onclick="display.value += '6'">
+                <input type="button" value="7" onclick="display.value += '7'">
+                <input type="button" value="8" onclick="display.value += '8'">
+            </div>
+            <div class="button-row">
+                <input type="button" value="9" onclick="display.value += '9'">
+                <input type="button" value="00" onclick="display.value += '00'">
+                <input type="button" value="0" onclick="display.value += '0'">
+                <input type="button" value="+" class="operator" onclick="display.value += '+'">
+            </div>
+            <div class="button-row">
+                <input type="button" value="-" class="operator" onclick="display.value += '-'">
+                <input type="button" value="*" class="operator" onclick="display.value += '*'">
+                <input type="button" value="/" class="operator" onclick="display.value += '/'">
+                <input type="button" value="=" class="equals" onclick="display.value = eval(display.value)">
+            </div>
+            <div class="button-row">
+                <input type="button" value="DE" class="delete" onclick="display.value = display.value.toString().slice(0,-1)">
+                <input type="button" value="AC" class="clear" onclick="display.value = ''">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const display = document.getElementById('display');
+</script>
+</html>

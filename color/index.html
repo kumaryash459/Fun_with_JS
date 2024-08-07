@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <label for=""><input type="text" placeholder="Enter color Name" id="input"></label>
+    </div>
+    <button id="button">Change</button>
+    <ul id="list"></ul>
+</body>
+<script>
+    const button = document.getElementById('button')
+    button.addEventListener('click', function(e){
+        e.preventDefault();
+        
+        const input = document.getElementById('input');
+        const inputValue = input.value.trim()
+        if(inputValue === ''){
+            alert('enter any color name')
+            return
+        }
+        const textColor = document.body.style.color = 'Yellow'
+        // if(inputValue === 'Yellow' || 'yellow'){
+        //     document.body.style.color = "blue";
+        //     // return
+        // }
+        // else{
+        //     const textColor = document.body.style.color = 'Yellow'
+            
+        // }
+        const color = document.body.style.background = inputValue
+        input.value = ''
+
+        // creating list and appending color value
+        const ListElement = document.getElementById('list')
+        const ListItem = document.createElement('li');
+        ListItem.textContent = inputValue
+        ListElement.appendChild(ListItem)
+    })
+
+</script>
+</html>

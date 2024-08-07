@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 2px solid black;
+        padding: 4px 4px;
+        margin: 10px 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+<body style="background-color: white;">
+    <div class="container" id="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque blanditiis nesciunt odio pariatur dolor nisi reprehenderit autem exercitationem? Nobis obcaecati exercitationem temporibus veritatis corrupti harum sequi corporis ipsum deleniti quia.
+    </div>
+    <label for="input"><input type="button" value="Toggle" id="button" ></label>
+</body>
+<script>
+    const button = document.getElementById('button')
+    const container = document.getElementById('container')
+    button.addEventListener('click', ()=>{
+        if(document.body.style.backgroundColor === 'white'){
+            document.body.style.backgroundColor = '#414141'
+            document.body.style.color = 'white'
+            container.style.borderColor = 'red' 
+            localStorage.setItem('color', 'white')
+            localStorage.setItem('backgroundColor', '#414141')
+            localStorage.setItem('borderColor', "red")
+        } else{
+            document.body.style.backgroundColor = 'white'
+            document.body.style.color = 'black'
+            container.style.borderColor = 'black' 
+            localStorage.setItem('color', 'black')
+            localStorage.setItem('backgroundColor', 'white')
+            localStorage.setItem('borderColor', 'black')
+        }
+    })
+
+    window.addEventListener('load', ()=>{
+        const storedColor = localStorage.getItem('color')
+        const storedBackground = localStorage.getItem('backgroundColor')
+        const storedBorder = localStorage.getItem('borderColor')
+        if(storedColor && storedBackground && storedBorder){
+            document.body.style.backgroundColor = storedBackground
+            document.body.style.color = storedColor
+            container.style.borderColor = storedBorder
+        }
+    })
+</script>
+</html>
